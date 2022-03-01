@@ -1,0 +1,27 @@
+﻿@model frontend_mvc_two.Models.HomeModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>The current time is: @DateTime.Now.ToLongTimeString()</p>
+</div>
+
+<div class="mb-3">
+    @Html.AntiForgeryToken()
+
+    <form method="post" asp-controller="Home" asp-action="Index" data-ajax="true" data-ajax-mode="replace" data-ajax-update="#CustomPanel">
+        <input class="input-group-text" type="text" autocomplete="false" asp-for="User"/>
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<div id="CustomPanel">
+    @await Html.PartialAsync("_PersonDetails.cshtml", new PersonDetails
+    {
+        Name = "Qasim",
+        Age = 36
+    })
+</div>

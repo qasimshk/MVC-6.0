@@ -1,0 +1,8 @@
+﻿@model frontend_mvc_two.Models.CompanyDetails
+
+<h2>Company Details</h2>
+@Html.DisplayNameFor(m => m.Name):@Html.DisplayFor(m => m.Name)
+<br/>
+@Html.DisplayNameFor(m => m.City):@Html.DisplayFor(m => m.City)
+<br/>
+<p>Updated at @DateTime.Now.ToLongTimeString()</p>
