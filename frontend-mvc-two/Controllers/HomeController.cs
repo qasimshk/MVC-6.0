@@ -4,6 +4,15 @@ using System.Diagnostics;
 
 namespace frontend_mvc_two.Controllers
 {
+
+/*
+https://learn.microsoft.com/en-us/ef/core/get-started/overview/install
+
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add Initial --output-dir "Persistance/Migrations"
+dotnet ef database update
+
+*/
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
